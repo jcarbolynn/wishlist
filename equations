@@ -1,0 +1,17 @@
+google sheet equations:
+
+=IF(LEN(D5)>0,IF(D5+90<DATEVALUE(TODAY()),D5+90,D5+90),"")
+if a date has been entered, add 90 days to the date for a "can buy date"
+
+=SUMIF(F5:F12, TRUE, C5:C12)
+if item has been checked off as being bought, adds cost to total
+
+
+
+conditional formatting:
+
+=IF(LEN(D:D)>0,IF(D:D+90<DATEVALUE(TODAY()),TRUE,FALSE),"")
+if true highlights date green to signal that user should revisit the item and decide if they want to buy
+
+=IF(F:F=TRUE,IF(D:D+90>DATEVALUE(TODAY()),TRUE,FALSE),"")
+if the item was bought before the "can buy date" the item will be highlighted red
